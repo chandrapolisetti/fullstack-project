@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <style>
+    /* Apply general styles to the body and headings */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(0, 75, 128);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+/* Style the form container */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Style form input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Style form submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color:  #003c7c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Style the login link */
+p a {
+  text-decoration: none;
+  color: hsl(216, 100%, 1%);
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Style the error or success message */
+.error-message {
+  color: #ff0000;
+  font-weight: bold;
+  margin-top: 50px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 300px;
+}
+
+.success-message {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Sign Up</h1>
+  <form action="/signup" method="post">
+    <p><input type="text" name="username" placeholder="Username"></p>
+    <p><input type="email" name="email" placeholder="email"></p>
+    <p><input type="password" name="password" placeholder="Password"></p>
+    <p><button type="submit">Sign Up</button></p>
+  </form>
+  <div class="error-message">
+    <%= message %>
+</div>
+  <p><a href="/">Login</a></p>
+</body>
+</html>

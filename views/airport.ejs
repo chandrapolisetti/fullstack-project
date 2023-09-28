@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airport Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #1304e6;
+            color: #fff;
+            padding: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #0056b3;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .no-results {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Airport Details</h1>
+    
+    <% if (airportData.length > 0) { %>
+        <ul>
+            <% airportData.forEach((airport) => { %>
+                <li>
+                    <h2><%= airport.name %></h2>
+                    <p>City: <%= airport.city %></p>
+                    <p>Region: <%= airport.region %></p>
+                    <p>Country: <%= airport.country %></p>
+                    <p>Elevation (ft): <%= airport.elevation_ft %></p>
+                    <p>Latitude: <%= airport.latitude %></p>
+                    <p>Longitude: <%= airport.longitude %></p>
+                    <p>Timezone: <%= airport.timezone %></p>
+                    <p>ICAO: <%= airport.icao %></p>
+                    <p>IATA: <%= airport.iata %></p>
+                    <!-- Add more details here as needed -->
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p class="no-results">No airports found for the provided city name.</p>
+    <% } %>
+</body>
+</html>
